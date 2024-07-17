@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <title>Blogsite</title>
+</head>
+<body>
+  <%- include("header.ejs") %>
+
+  <div class="container">
+    <div class="highlight">
+      <img src="img/blog_content1.jpg" alt="pic">
+      <div class="highlight content">
+        <a href="/blog/1"><h3><%= blogs[0].title %></h3></a>
+        <p><%= blogs[0].excerpt %></p>
+      </div>
+    </div>
+
+    <div class="trend">
+      <div class="trend head"><h3>Trending Blog</h3></div>
+      <% for(let i=2; i<=5; i++){ %>
+        <div class="content trend">
+          <a href="/blog/<%= i %>"><h4><%= blogs[i-1].title %></h4></a>
+          <p><%= blogs[i-1].excerpt %></p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <% for(let i=6; i<=8; i++){ %>
+      <div class="slides">
+        <a href="/blog/<%= i %>"><img src="img/slide<%=i-5 %>.jpg" alt="slide<%=i-5 %>"></a>
+        <div class="slides content">
+          <p><%= blogs[i-1].excerpt %></p>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include("footer.ejs") %>
+</body>
+</html>

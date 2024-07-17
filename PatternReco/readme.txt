@@ -1,0 +1,1 @@
+A pattern recognition game very with each level the number of patterns increases and you have to copy it to proceed to the next level.
